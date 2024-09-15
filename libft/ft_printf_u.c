@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_printf_u.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: twei-yo- <twei-yo-@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/11 21:48:11 by twei-yo-          #+#    #+#             */
-/*   Updated: 2024/09/14 00:30:38 by twei-yo-         ###   ########.fr       */
+/*   Created: 2024/06/27 14:57:33 by twei-yo-          #+#    #+#             */
+/*   Updated: 2024/09/13 21:56:54 by twei-yo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "so_long.h"
+#include "ft_printf.h"
 
-int main(int argc, char const *argv[])
+void	ft_putnbr_helper(long nb, int *count)
 {
-	char	*map_name;
-	int		fd;	
-	
-	if (argc != 2)
-		ft_printf("Error\n");
+	if (nb >= 10)
+		ft_putnbr_helper(nb / 10, count);
+	*count += ft_putchar((nb % 10) + '0');
+}
 
-	map_name = argv[1];
-	fd = open(map_name, "O_RDONLY");
+int	ft_put_uint(unsigned int nb)
+{
+	long	nb_long;
+	int		count;
 
+	count = 0;
+	nb_long = (long) nb;
+	ft_putnbr_helper(nb_long, &count);
+	return (count);
 }

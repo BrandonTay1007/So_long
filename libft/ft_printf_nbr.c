@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_printf_nbr.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: twei-yo- <twei-yo-@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/11 21:48:11 by twei-yo-          #+#    #+#             */
-/*   Updated: 2024/09/14 00:30:38 by twei-yo-         ###   ########.fr       */
+/*   Created: 2024/06/27 14:57:01 by twei-yo-          #+#    #+#             */
+/*   Updated: 2024/09/13 21:56:48 by twei-yo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "so_long.h"
+#include "ft_printf.h"
 
-int main(int argc, char const *argv[])
+int	ft_putint(int nb)
 {
-	char	*map_name;
-	int		fd;	
-	
-	if (argc != 2)
-		ft_printf("Error\n");
+	char	*temp;
+	int		w_c;
 
-	map_name = argv[1];
-	fd = open(map_name, "O_RDONLY");
-
+	w_c = 0;
+	temp = ft_itoa(nb);
+	w_c = ft_putstr(temp);
+	free(temp);
+	return (w_c);
 }

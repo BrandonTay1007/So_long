@@ -1,26 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_realloc.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: twei-yo- <twei-yo-@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/11 21:48:11 by twei-yo-          #+#    #+#             */
-/*   Updated: 2024/09/14 00:30:38 by twei-yo-         ###   ########.fr       */
+/*   Created: 2024/09/14 12:36:30 by twei-yo-          #+#    #+#             */
+/*   Updated: 2024/09/14 17:00:39 by twei-yo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "so_long.h"
+# include "libft.h"
 
-int main(int argc, char const *argv[])
+void *ft_realloc(void *ptr, size_t size)
 {
-	char	*map_name;
-	int		fd;	
-	
-	if (argc != 2)
-		ft_printf("Error\n");
+    void *new_ptr;
+    
+    if (size == 0) 
+    {
+        free(ptr);
+        return NULL;
+    }
 
-	map_name = argv[1];
-	fd = open(map_name, "O_RDONLY");
+    new_ptr = malloc(size);
+    if (!new_ptr)
+        return (NULL);
 
+    if (ptr) {
+        ft_memcpy(new_ptr, ptr, size);
+        free(ptr);
+    }
+
+    return (new_ptr);
 }

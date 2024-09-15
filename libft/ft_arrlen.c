@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_arrlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: twei-yo- <twei-yo-@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/11 21:48:11 by twei-yo-          #+#    #+#             */
-/*   Updated: 2024/09/14 00:30:38 by twei-yo-         ###   ########.fr       */
+/*   Created: 2024/09/15 12:31:08 by twei-yo-          #+#    #+#             */
+/*   Updated: 2024/09/15 12:32:26 by twei-yo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "so_long.h"
+# include "libft.h"
 
-int main(int argc, char const *argv[])
+size_t	ft_arrlen(char **arr)
 {
-	char	*map_name;
-	int		fd;	
-	
-	if (argc != 2)
-		ft_printf("Error\n");
-
-	map_name = argv[1];
-	fd = open(map_name, "O_RDONLY");
-
+    size_t len;
+    
+	len = 0;
+	while (arr[len])
+		len++;
+	return (len);
+    
 }

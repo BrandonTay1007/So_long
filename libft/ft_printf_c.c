@@ -1,26 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_printf_c.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: twei-yo- <twei-yo-@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/11 21:48:11 by twei-yo-          #+#    #+#             */
-/*   Updated: 2024/09/14 00:30:38 by twei-yo-         ###   ########.fr       */
+/*   Created: 2024/06/27 14:56:39 by twei-yo-          #+#    #+#             */
+/*   Updated: 2024/09/13 21:56:41 by twei-yo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "so_long.h"
+#include "ft_printf.h"
 
-int main(int argc, char const *argv[])
+int	ft_putchar(char c)
 {
-	char	*map_name;
-	int		fd;	
-	
-	if (argc != 2)
-		ft_printf("Error\n");
+	write(1, &c, 1);
+	return (1);
+}
 
-	map_name = argv[1];
-	fd = open(map_name, "O_RDONLY");
+int	ft_putstr(char *str)
+{
+	int	i;
 
+	i = 0;
+	if (str == NULL)
+		str = "(null)";
+	while (str[i])
+	{
+		ft_putchar(str[i]);
+		i++;
+	}
+	return (i);
 }

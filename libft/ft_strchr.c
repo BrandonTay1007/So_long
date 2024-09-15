@@ -6,7 +6,7 @@
 /*   By: twei-yo- <twei-yo-@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/03 16:52:52 by twei-yo-          #+#    #+#             */
-/*   Updated: 2024/03/11 16:03:26 by twei-yo-         ###   ########.fr       */
+/*   Updated: 2024/09/14 12:31:27 by twei-yo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,17 @@
 
 char	*ft_strchr(const char *src, int c)
 {
-	while (*src)
+	if (src)
 	{
-		if ((unsigned char)*src == (unsigned char)c)
+		while (*src)
+		{
+			if ((unsigned char)*src == (unsigned char)c)
+				return ((char *)src);
+			src++;
+		}
+		if (!(unsigned char)c)
 			return ((char *)src);
-		src++;
 	}
-	if (!(unsigned char)c)
-		return ((char *)src);
 	return (NULL);
 }
 
