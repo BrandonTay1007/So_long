@@ -6,7 +6,7 @@
 /*   By: twei-yo- <twei-yo-@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 14:56:41 by twei-yo-          #+#    #+#             */
-/*   Updated: 2024/09/15 12:32:11 by twei-yo-         ###   ########.fr       */
+/*   Updated: 2024/09/23 22:37:22 by twei-yo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,5 +80,6 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 char	*get_next_line(int fd);
 void 	*ft_realloc(void *ptr, size_t size);
 size_t	ft_arrlen(char **arr);
+char **ft_arrdup(char **arr);
 
 #endif

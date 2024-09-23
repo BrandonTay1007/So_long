@@ -6,5 +6,5 @@ AR= ar rcs
 RM= rm -rf
 
 all: 
-	gcc map_utils.c -Lminilibx-linux -lmlx_Linux -lX11 -lXext -Llibft -lft
+	gcc maps_checker.c map_utils.c test.c -Lminilibx-linux -lmlx_Linux -lX11 -lXext -Llibft -lft
 	./a.out

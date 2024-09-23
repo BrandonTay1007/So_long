@@ -6,7 +6,7 @@
 /*   By: twei-yo- <twei-yo-@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 22:23:19 by twei-yo-          #+#    #+#             */
-/*   Updated: 2024/09/15 12:32:46 by twei-yo-         ###   ########.fr       */
+/*   Updated: 2024/09/17 23:52:17 by twei-yo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,15 +114,4 @@ t_maps *get_map_data(int fd)
 	// 	return (NULL);
 	// }
 	return (maps_data);
-}
-
-int main()
-{
-	int fd = open("maps/map1.ber", O_RDONLY);
-	t_maps *maps_data = get_map_data(fd);
-	printf("height: %d\n", maps_data->height);
-	printf("width: %d\n", maps_data->width);
-	printf("player_pos: %d %d\n", maps_data->player_pos[0],maps_data->player_pos[1]);
-	printf("exit_pos: %d %d\n", maps_data->exit_pos[0],maps_data->exit_pos[1]);
-	printf("collectible_count: %d\n", maps_data->collectible_count);
 }
